@@ -1,4 +1,3 @@
-// js/details.js
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
   const userId = params.get('id');
@@ -30,7 +29,6 @@ document.addEventListener('DOMContentLoaded', async () => {
       <p><i class="fas fa-building"></i> <strong>Firma:</strong> ${user.company.name}</p>
     `;
 
-    // Wypełnij formularz domyślnymi wartościami
     editForm.name.value = user.name;
     editForm.email.value = user.email;
     editForm.phone.value = user.phone;
