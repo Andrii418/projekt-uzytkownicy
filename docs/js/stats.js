@@ -9,10 +9,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let start = 0;
     const startTime = performance.now();
-    const delay = index * 200; // efekt opóźnienia między kartami
+    const delay = index * 200; 
 
     const formatNumber = (num) => {
-      return num.toLocaleString("pl-PL"); // formatowanie liczb np. 1 000
+      return num.toLocaleString("pl-PL");
     };
 
     const animate = (time) => {
