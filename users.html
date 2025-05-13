@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Users List - Lista użytkowników</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-users"></i>
+        <span class="logo-text">Users List</span>
+      </div> 
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="users.html" class="active"><i class="fas fa-list"></i> Lista</a></li>
+          <li><a href="user-details.html"><i class="fas fa-id-card"></i> Szczegóły</a></li>
+          <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="users-main">
+    <section class="users-section">
+      <h1><i class="fas fa-list"></i> Lista użytkowników</h1>
+
+      <!-- Panel filtrów i sortowania -->
+      <div class="controls">
+        <input type="text" id="search-input" placeholder="Szukaj po imieniu..." />
+        <select id="sort-select">
+          <option value="name">Sortuj po imieniu</option>
+          <option value="city">Sortuj po mieście</option>
+        </select>
+      </div>
+
+      <!-- Widok kartowy (mobile/tablet) -->
+      <div id="users-cards" class="users-list"></div>
+
+      <!-- Widok tabeli (desktop) -->
+      <div id="users-table" class="users-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Imię</th>
+              <th>Email</th>
+              <th>Telefon</th>
+              <th>Miasto</th>
+              <th>Akcje</th>
+            </tr>
+          </thead>
+          <tbody id="users-table-body">
+            <!-- Dane będą wstawiane dynamicznie przez JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Paginacja -->
+      <div id="pagination" class="pagination"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/users.js"></script>
+</body>
+</html>

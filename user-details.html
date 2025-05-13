@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Szczegóły użytkownika</title>
+
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-users"></i>
+        <span class="logo-text">Users List</span>
+      </div> 
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="users.html"><i class="fas fa-list"></i> Lista</a></li>
+          <li><a href="user-details.html" class="active"><i class="fas fa-id-card"></i> Szczegóły</a></li>
+          <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="details-main">
+    <section class="details-section">
+      <h1><i class="fas fa-id-card"></i> Dane użytkownika</h1>
+      <div id="user-details" class="user-details">
+        Ładowanie danych użytkownika...
+      </div>
+
+      <button id="editBtn" class="edit-btn"><i class="fas fa-edit"></i> Edytuj</button>
+
+      <form id="editForm" style="display: none;" class="edit-form">
+        <label>Imię i nazwisko: <input type="text" name="name" required></label>
+        <label>Email: <input type="email" name="email" required></label>
+        <label>Telefon: <input type="text" name="phone"></label>
+        <button type="submit" class="save-btn"><i class="fas fa-save"></i> Zapisz</button>
+      </form>
+
+      <a href="users.html" class="back-btn"><i class="fas fa-arrow-left"></i> Wróć do listy</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
+
+  <script src="js/details.js"></script>
+</body>
+</html>

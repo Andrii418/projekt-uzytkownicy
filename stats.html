@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Users List - Statystyki</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-users"></i>
+        <span class="logo-text">Users List</span>
+      </div> 
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="users.html"><i class="fas fa-list"></i> Lista</a></li>
+          <li><a href="user-details.html"><i class="fas fa-id-card"></i> Szczegóły</a></li>
+          <li><a href="stats.html" class="active"><i class="fas fa-chart-line"></i> Statystyki</a></li>
+          <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stats-main">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Statystyki użytkowników <i class="fas fa-chart-bar"></i></h1>
+        <p>
+          Poniżej znajdziesz najważniejsze statystyki dotyczące liczby użytkowników, firm oraz miast.<br />
+          Dane są dynamiczne i aktualizowane w czasie rzeczywistym.
+        </p>
+      </div>
+    </section>
+
+    <section class="stats-section">
+      <div class="stats-grid">
+
+        <!-- Użytkownicy -->
+        <div class="stat-card">
+          <div class="icon-circle">
+            <i class="fas fa-user icon-blue"></i>
+          </div>
+          <h2 class="counter" data-target="1734" data-prefix="" data-suffix="" data-duration="2500">0</h2>
+
+          <p>Użytkowników</p>
+          <div class="stat-details">
+            <div class="detail-item"><i class="fas fa-user-plus icon-blue"></i> Nowych dziś: 2</div>
+            <div class="detail-item"><i class="fas fa-user-check icon-green"></i> Aktywnych: 8</div>
+            <div class="detail-item"><i class="fas fa-user-slash icon-red"></i> Nieaktywnych: 2</div>
+            <div class="detail-item"><i class="fas fa-clock icon-gray"></i> Średni czas aktywności: 3h</div>
+          </div>
+          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
+        </div>
+
+        <!-- Firmy -->
+        <div class="stat-card">
+          <div class="icon-circle">
+            <i class="fas fa-building icon-purple"></i>
+          </div>
+          <h2 class="counter" data-target="84" data-prefix="" data-suffix="" data-duration="2500">0</h2>
+
+          <p>Firm</p>
+          <div class="stat-details">
+            <div class="detail-item"><i class="fas fa-plus-circle icon-blue"></i> Nowych w tygodniu: 1</div>
+            <div class="detail-item"><i class="fas fa-check-circle icon-green"></i> Aktywnych: 4</div>
+            <div class="detail-item"><i class="fas fa-times-circle icon-red"></i> Zamkniętych: 1</div>
+            <div class="detail-item"><i class="fas fa-globe icon-orange"></i> Krajów operacji: 3</div>
+          </div>
+          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
+        </div>
+
+        <!-- Miasta -->
+        <div class="stat-card">
+          <div class="icon-circle">
+            <i class="fas fa-city icon-teal"></i>
+          </div>
+          <h2 class="counter" data-target="282" data-prefix="" data-suffix="" data-duration="2500">0</h2>
+
+          <p>Miasta</p>
+          <div class="stat-details">
+            <div class="detail-item"><i class="fas fa-plus icon-blue"></i> Nowe miasta: 2</div>
+            <div class="detail-item"><i class="fas fa-map-marker-alt icon-green"></i> Aktywne regiony: 6</div>
+            <div class="detail-item"><i class="fas fa-exclamation-circle icon-red"></i> Bez danych: 0</div>
+            <div class="detail-item"><i class="fas fa-database icon-gray"></i> Miasta z pełnymi danymi: 6</div>
+          </div>
+          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/stats.js"></script>
+</body>
+</html>
