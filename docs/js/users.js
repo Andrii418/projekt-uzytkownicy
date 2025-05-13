@@ -39,11 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const start = (currentPage - 1) * usersPerPage;
     const paginatedUsers = filtered.slice(start, start + usersPerPage);
 
-    // Wyczyść stare dane
     cardsContainer.innerHTML = "";
     tableBody.innerHTML = "";
 
-    // RENDER KART (MOBILE)
     paginatedUsers.forEach((user) => {
       const card = document.createElement("div");
       card.className = "user-card";
@@ -61,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
       cardsContainer.appendChild(card);
     });
 
-    // RENDER TABELI (DESKTOP)
     paginatedUsers.forEach((user) => {
       const row = document.createElement("tr");
       row.innerHTML = `
