@@ -880,3 +880,56 @@ body {
   
 }
 
+/* Domyślnie ukryty hamburger */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Ukryty domyślnie */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #14532d; /* dopasowany do stylu */
+}
+
+/* Styl i pozycja hamburgera w mobile */
+@media (max-width: 480px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    background-color: #d8f0d8;
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0.5rem 0;
+  }
+}
+
