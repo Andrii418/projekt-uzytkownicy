@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-users"></i>
+        <span class="logo-text">Users List</span>
+      </div> 
+      <nav class="navbar">
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+          <li><a href="users.html"><i class="fas fa-list"></i> Lista</a></li>
+          <li><a href="user-details.html"><i class="fas fa-id-card"></i> Szczegóły</a></li>
+          <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
+          <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="home-main">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Skontaktuj się z nami <i class="fas fa-envelope"></i></h1>
+        <p>
+          Masz pytania lub sugestie? Wypełnij poniższy formularz, a odpowiemy najszybciej jak to możliwe.<br /><br />
+        </p>
+        <form class="contact-form">
+          <div class="form-group">
+            <input type="text" placeholder="Imię i nazwisko" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Adres e-mail" required />
+          </div>
+          <div class="form-group">
+            <textarea rows="5" placeholder="Twoja wiadomość..." required></textarea>
+          </div>
+          <button type="submit" class="btn">Wyślij wiadomość</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
