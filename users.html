@@ -11,28 +11,32 @@
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <div class="logo">
-        <i class="fas fa-users"></i>
-        <span class="logo-text">Users List</span>
-      </div> 
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-          <li><a href="users.html" class="active"><i class="fas fa-list"></i> Lista</a></li>
-          <li><a href="user-details.html"><i class="fas fa-id-card"></i> Szczegóły</a></li>
-          <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
-          <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
-        </ul>
-      </nav>
+  <div class="container">
+    <div class="logo">
+      <i class="fas fa-users"></i>
+      <span class="logo-text">Users List</span>
     </div>
-  </header>
+
+    <button id="hamburger" class="hamburger" aria-label="Menu">
+  <i class="fas fa-bars"></i>
+</button>
+
+    <nav class="navbar" id="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="users.html"><i class="fas fa-list"></i> Lista</a></li>
+        <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <main class="users-main">
     <section class="users-section">
       <h1><i class="fas fa-list"></i> Lista użytkowników</h1>
 
-      <!-- Panel filtrów i sortowania -->
       <div class="controls">
         <input type="text" id="search-input" placeholder="Szukaj po imieniu..." />
         <select id="sort-select">
@@ -41,10 +45,8 @@
         </select>
       </div>
 
-      <!-- Widok kartowy (mobile/tablet) -->
       <div id="users-cards" class="users-list"></div>
 
-      <!-- Widok tabeli (desktop) -->
       <div id="users-table" class="users-table">
         <table>
           <thead>
@@ -57,12 +59,10 @@
             </tr>
           </thead>
           <tbody id="users-table-body">
-            <!-- Dane będą wstawiane dynamicznie przez JS -->
           </tbody>
         </table>
       </div>
 
-      <!-- Paginacja -->
       <div id="pagination" class="pagination"></div>
     </section>
   </main>
@@ -77,6 +77,18 @@
       </div>
     </div>
   </footer>
+
+  <script>
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+
+  if (hamburger && navbar) {
+    hamburger.addEventListener('click', () => {
+      navbar.classList.toggle('active');
+    });
+  }
+</script>
+
 
   <script src="js/users.js"></script>
 </body>
