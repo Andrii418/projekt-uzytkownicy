@@ -4,12 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Users List - Statystyki</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .extra-details {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      margin-top: 10px;
+      padding: 0 10px;
+      font-size: 0.95rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .extra-details.open {
+      max-height: 500px;
+      padding: 10px;
+    }
+
+    .toggle-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007bff;
+      cursor: pointer;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .toggle-link:hover {
+      color: #0056b3;
+    }
+
+    .toggle-link i {
+      transition: transform 0.3s ease;
+      margin-left: 5px;
+    }
+
+    .toggle-link.open i {
+      transform: rotate(180deg);
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
+
+<header class="header">
   <div class="container">
     <div class="logo">
       <i class="fas fa-users"></i>
@@ -17,14 +61,13 @@
     </div>
 
     <button id="hamburger" class="hamburger" aria-label="Menu">
-  <i class="fas fa-bars"></i>
-</button>
+      <i class="fas fa-bars"></i>
+    </button>
 
     <nav class="navbar" id="navbar">
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="users.html"><i class="fas fa-list"></i> Lista</a></li>
-        <li><a href="user-details.html"><i class="fas fa-id-card"></i> Szczegóły</a></li>
         <li><a href="stats.html"><i class="fas fa-chart-line"></i> Statystyki</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i> Kontakt</a></li>
       </ul>
@@ -32,96 +75,126 @@
   </div>
 </header>
 
-
-  <main class="stats-main">
-    <section class="hero">
-      <div class="hero-content">
-        <h1>Statystyki użytkowników <i class="fas fa-chart-bar"></i></h1>
-        <p>
-          Poniżej znajdziesz najważniejsze statystyki dotyczące liczby użytkowników, firm oraz miast.<br />
-          Dane są dynamiczne i aktualizowane w czasie rzeczywistym.
-        </p>
-      </div>
-    </section>
-
-    <section class="stats-section">
-      <div class="stats-grid">
-
-        <div class="stat-card">
-          <div class="icon-circle">
-            <i class="fas fa-user icon-blue"></i>
-          </div>
-          <h2 class="counter" data-target="1734" data-prefix="" data-suffix="" data-duration="2500">0</h2>
-
-          <p>Użytkowników</p>
-          <div class="stat-details">
-            <div class="detail-item"><i class="fas fa-user-plus icon-blue"></i> Nowych dziś: 2</div>
-            <div class="detail-item"><i class="fas fa-user-check icon-green"></i> Aktywnych: 8</div>
-            <div class="detail-item"><i class="fas fa-user-slash icon-red"></i> Nieaktywnych: 2</div>
-            <div class="detail-item"><i class="fas fa-clock icon-gray"></i> Średni czas aktywności: 3h</div>
-          </div>
-          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
-        </div>
-
-        <div class="stat-card">
-          <div class="icon-circle">
-            <i class="fas fa-building icon-purple"></i>
-          </div>
-          <h2 class="counter" data-target="84" data-prefix="" data-suffix="" data-duration="2500">0</h2>
-
-          <p>Firm</p>
-          <div class="stat-details">
-            <div class="detail-item"><i class="fas fa-plus-circle icon-blue"></i> Nowych w tygodniu: 1</div>
-            <div class="detail-item"><i class="fas fa-check-circle icon-green"></i> Aktywnych: 4</div>
-            <div class="detail-item"><i class="fas fa-times-circle icon-red"></i> Zamkniętych: 1</div>
-            <div class="detail-item"><i class="fas fa-globe icon-orange"></i> Krajów operacji: 3</div>
-          </div>
-          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
-        </div>
-
-        <div class="stat-card">
-          <div class="icon-circle">
-            <i class="fas fa-city icon-teal"></i>
-          </div>
-          <h2 class="counter" data-target="282" data-prefix="" data-suffix="" data-duration="2500">0</h2>
-
-          <p>Miasta</p>
-          <div class="stat-details">
-            <div class="detail-item"><i class="fas fa-plus icon-blue"></i> Nowe miasta: 2</div>
-            <div class="detail-item"><i class="fas fa-map-marker-alt icon-green"></i> Aktywne regiony: 6</div>
-            <div class="detail-item"><i class="fas fa-exclamation-circle icon-red"></i> Bez danych: 0</div>
-            <div class="detail-item"><i class="fas fa-database icon-gray"></i> Miasta z pełnymi danymi: 6</div>
-          </div>
-          <a href="user-details.html" class="more-link">Zobacz szczegóły</a>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
-      <div class="socials">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-x-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      </div>
+<main class="stats-main">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Statystyki użytkowników <i class="fas fa-chart-bar"></i></h1>
+      <p>
+        Poniżej znajdziesz najważniejsze statystyki dotyczące liczby użytkowników, firm oraz miast.<br />
+        Dane są dynamiczne i aktualizowane w czasie rzeczywistym.
+      </p>
     </div>
-  </footer>
+  </section>
 
-  <script>
+  <section class="stats-section">
+    <div class="stats-grid">
+
+      <!-- Użytkownicy -->
+      <div class="stat-card">
+        <div class="icon-circle">
+          <i class="fas fa-user icon-blue"></i>
+        </div>
+        <h2 class="counter" data-target="1734" data-duration="2500">0</h2>
+        <p>Użytkowników</p>
+        <div class="stat-details">
+          <div class="detail-item"><i class="fas fa-user-plus icon-blue"></i> Nowych dziś: 2</div>
+          <div class="detail-item"><i class="fas fa-user-check icon-green"></i> Aktywnych: 8</div>
+          <div class="detail-item"><i class="fas fa-user-slash icon-red"></i> Nieaktywnych: 2</div>
+          <div class="detail-item"><i class="fas fa-clock icon-gray"></i> Średni czas aktywności: 3h</div>
+        </div>
+        <a class="toggle-link" href="javascript:void(0)" onclick="toggleDetails('details-users', this)">
+          Zobacz szczegóły <i class="fas fa-chevron-down"></i>
+        </a>
+        <div id="details-users" class="extra-details">
+          <ul>
+            <li>Średni wiek użytkownika: 32 lata</li>
+            <li>Najaktywniejszy użytkownik: Jan Kowalski</li>
+            <li>Najczęstsze miasto: Warszawa</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Firmy -->
+      <div class="stat-card">
+        <div class="icon-circle">
+          <i class="fas fa-building icon-purple"></i>
+        </div>
+        <h2 class="counter" data-target="84" data-duration="2500">0</h2>
+        <p>Firm</p>
+        <div class="stat-details">
+          <div class="detail-item"><i class="fas fa-plus-circle icon-blue"></i> Nowych w tygodniu: 1</div>
+          <div class="detail-item"><i class="fas fa-check-circle icon-green"></i> Aktywnych: 4</div>
+          <div class="detail-item"><i class="fas fa-times-circle icon-red"></i> Zamkniętych: 1</div>
+          <div class="detail-item"><i class="fas fa-globe icon-orange"></i> Krajów operacji: 3</div>
+        </div>
+        <a class="toggle-link" href="javascript:void(0)" onclick="toggleDetails('details-firms', this)">
+          Zobacz szczegóły <i class="fas fa-chevron-down"></i>
+        </a>
+        <div id="details-firms" class="extra-details">
+          <ul>
+            <li>Największa firma: TechCorp</li>
+            <li>Średnia liczba pracowników: 45</li>
+            <li>Najpopularniejsza branża: IT</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Miasta -->
+      <div class="stat-card">
+        <div class="icon-circle">
+          <i class="fas fa-city icon-teal"></i>
+        </div>
+        <h2 class="counter" data-target="282" data-duration="2500">0</h2>
+        <p>Miasta</p>
+        <div class="stat-details">
+          <div class="detail-item"><i class="fas fa-plus icon-blue"></i> Nowe miasta: 2</div>
+          <div class="detail-item"><i class="fas fa-map-marker-alt icon-green"></i> Aktywne regiony: 6</div>
+          <div class="detail-item"><i class="fas fa-exclamation-circle icon-red"></i> Bez danych: 0</div>
+          <div class="detail-item"><i class="fas fa-database icon-gray"></i> Miasta z pełnymi danymi: 6</div>
+        </div>
+        <a class="toggle-link" href="javascript:void(0)" onclick="toggleDetails('details-cities', this)">
+          Zobacz szczegóły <i class="fas fa-chevron-down"></i>
+        </a>
+        <div id="details-cities" class="extra-details">
+          <ul>
+            <li>Największe miasto: Kraków</li>
+            <li>Średnia liczba użytkowników na miasto: 85</li>
+            <li>Najczęstszy region: Mazowieckie</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2025 Users List App. Wszelkie prawa zastrzeżone.</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
   const hamburger = document.getElementById('hamburger');
   const navbar = document.getElementById('navbar');
-
   if (hamburger && navbar) {
     hamburger.addEventListener('click', () => {
       navbar.classList.toggle('active');
     });
   }
+
+  function toggleDetails(id, link) {
+    const el = document.getElementById(id);
+    el.classList.toggle('open');
+    link.classList.toggle('open');
+  }
 </script>
 
-
-  <script src="js/stats.js"></script>
+<script src="js/stats.js"></script>
 </body>
 </html>
