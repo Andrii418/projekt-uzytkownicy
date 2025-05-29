@@ -13,37 +13,64 @@
     .extra-details {
       overflow: hidden;
       max-height: 0;
-      transition: max-height 0.4s ease, padding 0.3s ease;
-      background-color: #f7f7f7;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.3s ease;
+      background: #f9fafc;
+      border-left: 4px solid #3b82f6;
       border-radius: 8px;
       margin-top: 10px;
-      padding: 0 10px;
+      padding: 0 16px;
       font-size: 0.95rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .extra-details.open {
-      max-height: 500px;
-      padding: 10px;
+      max-height: 300px;
+      opacity: 1;
+      padding: 12px 16px;
+    }
+
+    .extra-details ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .extra-details li {
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .extra-details li:last-child {
+      border-bottom: none;
+    }
+
+    .extra-details li::before { 
+      font-size: 1rem;
+      color: #2563eb;
     }
 
     .toggle-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: #007bff;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 12px;
+      color: #2563eb;
       cursor: pointer;
       font-weight: 500;
       text-decoration: none;
       transition: color 0.2s ease;
+      gap: 5px;
     }
 
     .toggle-link:hover {
-      color: #0056b3;
+      color: #1d4ed8;
     }
 
     .toggle-link i {
       transition: transform 0.3s ease;
-      margin-left: 5px;
     }
 
     .toggle-link.open i {
@@ -59,11 +86,9 @@
       <i class="fas fa-users"></i>
       <span class="logo-text">Users List</span>
     </div>
-
     <button id="hamburger" class="hamburger" aria-label="Menu">
       <i class="fas fa-bars"></i>
     </button>
-
     <nav class="navbar" id="navbar">
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
